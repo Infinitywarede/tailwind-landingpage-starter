@@ -1,0 +1,31 @@
+/* Tailwind CSS 4. Nur die Ordner unten werden nach Klassen durchsucht. */
+@import "tailwindcss" source(none);
+@source "../sections";
+@source "../demo/shell.html";
+
+/* Dunkelmodus per Klasse: <html class="dark"> schaltet um */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Markenfarbe: ändere nur diese Werte, alle Abschnitte folgen.
+   Kontrast geprüft: brand-600 auf Weiß, brand-300 auf Slate-950. */
+@theme {
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-300: #5eead4;
+  --color-brand-400: #2dd4bf;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0f766e;
+  --color-brand-700: #115e59;
+  --color-brand-800: #134e4a;
+  --color-brand-900: #0f3d3a;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, ::before, ::after { transition-duration: 0.01ms !important; }
+  }
+  summary::-webkit-details-marker { display: none; }
+}

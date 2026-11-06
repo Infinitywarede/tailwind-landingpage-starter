@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-landingpage-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landingpage-Grundgerüst auf Deutsch mit Tailwind CSS 4 und Dunkelmodus",
+  "license": "MIT",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o dist/kit.css --minify",
+    "dev": "tailwindcss -i src/input.css -o dist/kit.css --watch",
+    "demo": "node tools/build-demo.mjs",
+    "all": "node tools/build-demo.mjs && tailwindcss -i src/input.css -o dist/kit.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
+  }
+}
